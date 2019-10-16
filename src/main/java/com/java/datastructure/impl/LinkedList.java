@@ -63,6 +63,18 @@ public class LinkedList<T> {
 		}
 	}
 
+	public void remove(int index){
+		Node prevNode = this.getHead();
+		for (int i = 1; i < index-1; i++){
+			prevNode = prevNode.next;
+		}
+
+		Node currentNode = prevNode.next;
+
+		prevNode.next = currentNode.next;
+
+		currentNode.next = null;
+	}
 
 	public Node getHead() {
 		return head;
@@ -95,6 +107,7 @@ public class LinkedList<T> {
 		data.add(10);
 		data.add(4,6);
 
+		data.remove(4);
 		System.out.println(data);
 	}
 
